@@ -1,3 +1,5 @@
+
+
 body{
    
     height: 100vh;
@@ -37,3 +39,29 @@ img{
     font-size:25px
 }
 
+.img-fluid{
+    max-width:85%
+}
+
+ul{ 
+    list-style: none;
+}
+
+.my-message{
+    padding: 5px;
+    text-align: right;
+    min-height: 50px;
+    background-color: #D5F9BA;
+    margin-bottom: 20px;
+  
+    
+}
+.his-message{
+    padding: 5px;
+    text-align: right;
+    min-height: 50px;
+    background-color: #fff;
+    margin-bottom: 20px;
+  
+    
+}
