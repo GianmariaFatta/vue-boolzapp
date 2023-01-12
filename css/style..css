@@ -3,3 +3,19 @@ body{
     height: 100vh;
     background-image: linear-gradient(180deg, #009688 10%, #DBDBD3 10%);
 }
+
+.template{
+    background-color: #EAEAEA;
+}
+
+.header{
+   height: 80px;
+}
+
+.chatBox{
+    width: 100%;
+    height: 500px;
+    background-color: red;
+    background-image: url(../img/mine.jpg);
+    background-size: cover;
+}
