@@ -19,3 +19,17 @@ body{
     background-image: url(../img/mine.jpg);
     background-size: cover;
 }
+.allert{
+    background-color: #5cceff;
+    height: 80px;
+}
+.contact-list{
+    background-color: #fff;
+    height: 460px;
+    
+}
+
+img{
+    border-radius: 50%;
+}
+
