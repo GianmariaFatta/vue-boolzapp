@@ -86,6 +86,10 @@ const app = Vue.createApp({
                 },
             ],
             newMessage:'',
+            newMessageIn:{
+            date: '10/01/2020 16:15:22',
+            text: 'ok!',
+            status: 'received', }
         }
     },
     methods: {setCurrentindex(target){
@@ -101,6 +105,8 @@ const app = Vue.createApp({
             }
             this.contacts[this.currentIndex].messages.push(newMessage);
             this.newMessage=""
+            setTimeout(() => this.contacts[this.currentIndex].messages.push(this.newMessageIn), 1000)
+            
     }
     }
 }
