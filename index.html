@@ -82,23 +82,12 @@
                     </div>
                 </div>
                 <main>
-                    <div class="chatBox overflow-auto d-flex flex-column p-5">
-                        <ul v-for="message in contacts[currentIndex].messages">
+                    <div class="chatBox overflow-auto ">
+                        <ul class="d-flex flex-column justify-content-end m-4 p-1 align-items-end" v-for="message in contacts[currentIndex].messages">
                             <li v-for="" :class="`${message.status} rounded-3`">
                                 {{message.text}}
                             </li>
-                           
                         </ul>
-
-                        <!-- MY MESSAGE
-                        <div class=" align-items-end fs-5" >
-                            <p class="sent rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
-                        </div>
-                        HIS MESSAGE
-                        <div class="d-flex flex-column align-items-start fs-5" >
-                            <p class="received rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="d-block fs-6 text-right">12/01/2023 19:46</span> </p>
-                        </div> -->
-                        
                     </div>
                 </main>
                 <footer>
@@ -107,7 +96,7 @@
                         <i class="fa-regular fa-face-smile" role="button"></i>
                     </div>
                     <div class="col-10 w-10">
-                        <div class="w-100" > <input class="w-100 h-100" type="text" placeholder="Scrivi un messaggio"></div>
+                        <div class="w-100" > <input class="w-100 h-100" type="text" v-model.trim="newMessage" @keyup.enter="addNewmessage(i)" placeholder="Scrivi un messaggio"></div>
                     </div>
                     <div class="col-1 d-flex justify-content-center">
                         <i class="fa-solid fa-microphone" role="button"></i>
