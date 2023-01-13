@@ -83,13 +83,11 @@
                 </div>
                 <main>
                     <div class="chatBox overflow-auto d-flex flex-column p-5">
-                        <ul>
-                            <li class="sent rounded-3">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <ul v-for="message in contacts[currentIndex].messages">
+                            <li v-for="" :class="`${message.status} rounded-3`">
+                                {{message.text}}
                             </li>
-                            <li class="received rounded-3">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </li>
+                           
                         </ul>
 
                         <!-- MY MESSAGE
