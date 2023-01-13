@@ -13,15 +13,15 @@
     <script defer src="js/script.js" ></script>
 </head>
 <body>
-    <div class="container p-5 ">
+    <div id="root" class="container p-5 ">
         <div class="row g-0 d-flex">
             <div class="col-4">
                 <nav>
                     <div class="header template ">
                         <div class="row h-100">
                             <div class="col-3 d-flex justify-content-left align-items-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                                <div>Nome Utente</div>
+                                <img src="img/avatar_io.jpg" class="img-fluid p-2" alt="">
+                                <div class="h5">Jimmy Fatta</div>
                             </div>
                             <div class="col-8 d-flex align-items-center justify-content-end gap-2">
                                 <i class="fa-solid fa-message"></i>
@@ -46,89 +46,14 @@
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
                       </div>
                     <div class="contact-list overflow-auto" role="button">
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
-                            </div>
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img src="img/avatar_1.jpg" class="img-fluid p-2" alt="">
-                            </div>
-                            <div class="col-8 d-flex align-items-center h5">
-                                <span>Michele</span>
+                        <div class="row g-0 ">
+                            <div @click="setCurrentindex(i)" v-for="(contact,i) in contacts" class="d-flex contact">
+                                <div class="col-2 d-flex align-items-center  justify-content-center">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" class="img-fluid p-2" alt="">
+                                </div>
+                                <div class="col-8 d-flex align-items-center h5">
+                                <span><b>{{contact.name}}</b></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,10 +65,10 @@
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="img/avatar_1.jpg" class="img-fluid"  alt="">
+                                    <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" class="img-fluid"  alt="">
                                 </div>
                                 <div class="col-9 ">
-                                    <div>Michele</div>
+                                    <div class="fs-4"><b>{{contacts[currentIndex].name}}</b></div>
                                     <div>ultimo Messaggio oggi alle</div>
                                 </div>
                             </div>
@@ -157,28 +82,25 @@
                     </div>
                 </div>
                 <main>
-                    <div class="chatBox overflow-auto p-5">
-                        <!-- MY MESSAGE -->
-                        <div class="d-flex flex-column align-items-end fs-5" >
-                            <p class="my-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
+                    <div class="chatBox overflow-auto d-flex flex-column p-5">
+                        <ul>
+                            <li class="sent rounded-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </li>
+                            <li class="received rounded-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </li>
+                        </ul>
+
+                        <!-- MY MESSAGE
+                        <div class=" align-items-end fs-5" >
+                            <p class="sent rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
                         </div>
-                        <!-- HIS MESSAGE -->
+                        HIS MESSAGE
                         <div class="d-flex flex-column align-items-start fs-5" >
-                            <p class="his-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="d-block fs-6 text-right">12/01/2023 19:46</span> </p>
-                        </div>
-                        <div class="d-flex flex-column align-items-start fs-5" >
-                            <p class="his-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="d-block fs-6 text-right">12/01/2023 19:46</span> </p>
-                        </div>
-                        <div class="d-flex flex-column align-items-end fs-5" >
-                            <p class="my-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
-                        </div>    <div class="d-flex flex-column align-items-end fs-5" >
-                            <p class="my-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
-                        </div>    <div class="d-flex flex-column align-items-end fs-5" >
-                            <p class="my-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
-                        </div>    <div class="d-flex flex-column align-items-end fs-5" >
-                            <p class="my-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates tenetur voluptatibus assumenda cupiditate animi, consequuntur error expedita eligendi molestias, deleniti esse fugiat totam ex saepe sapiente odio provident sit? Pariatur! <span class="d-block fs-6 text-right">12/01/2023 19:45</span> </p>
-                        </div>
-                       
+                            <p class="received rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="d-block fs-6 text-right">12/01/2023 19:46</span> </p>
+                        </div> -->
+                        
                     </div>
                 </main>
                 <footer>
