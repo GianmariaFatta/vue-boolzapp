@@ -1,5 +1,5 @@
 
-
+const dt=luxon.DateTime;
 const app = Vue.createApp({
     data(){
         return{
@@ -89,7 +89,7 @@ const app = Vue.createApp({
             ],
             newMessage:'',
             newMessageIn:{
-            date: '10/01/2020 16:15:22',
+            date: this.getCurrentMoment(),
             text: 'ok!',
             status: 'received', }
         }
@@ -102,7 +102,7 @@ const app = Vue.createApp({
         if(this.newMessage){ 
             const newMessage={
                 text:this.newMessage,
-                date:'20/03/2020 16:30:00',
+                date:this.getCurrentMoment(),
                 status: 'sent'
             }
             this.contacts[this.currentIndex].messages.push(newMessage);
@@ -110,7 +110,10 @@ const app = Vue.createApp({
             setTimeout(() => this.contacts[this.currentIndex].messages.push(this.newMessageIn), 1000)
             
     }
-    }
+    },
+    getCurrentMoment(){
+        return dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT);
+    },
 },
 computed: {
     filteredList(){

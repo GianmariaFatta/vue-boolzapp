@@ -8,6 +8,7 @@
     <title>BOOLZAP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
     <link rel="stylesheet" href="css/style..css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="js/script.js" ></script>
@@ -69,7 +70,7 @@
                                 </div>
                                 <div class="col-9 ">
                                     <div class="fs-4"><b>{{contacts[currentIndex].name}}</b></div>
-                                    <div>ultimo Messaggio oggi alle</div>
+                                    <div>ultimo Accesso {{ getCurrentMoment() }}</div>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +85,7 @@
                 <main>
                     <div class="chatBox overflow-auto ">
                         <ul class="d-flex flex-column justify-content-end m-4 p-1 align-items-end" v-for="message in contacts[currentIndex].messages">
-                            <li :class="`${message.status} rounded-3`">
+                            <li :class="`${message.status} rounded-3 shadow `">
                                 {{message.text}} <span class="date d-block text-right " >{{message.date}}</span>
                             </li>
                         </ul>
