@@ -127,6 +127,9 @@ computed: {
             return contact.name.toLowerCase().includes(this.searchTerms.toLowerCase())
         })
 
+    },
+    currentContact(){
+        return this.contacts[this.currentIndex]
     }
 }
 })
