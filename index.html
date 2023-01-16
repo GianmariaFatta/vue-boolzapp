@@ -23,10 +23,10 @@
                                 <img src="img/avatar_io.jpg" class="img-fluid p-2" alt="">
                                 <div class="h5">Jimmy Fatta</div>
                             </div>
-                            <div class="col-8 d-flex align-items-center justify-content-end gap-2">
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-rotate"></i>
-                                <i class="fa-solid fa-bars"></i>
+                            <div class="col-8 d-flex align-items-center justify-content-end gap-2  fa-xl">
+                                <a href=""><i class=" fa-solid fa-message"></i></a>
+                                <a href=""><i class=" fa-solid fa-rotate"></i></a>
+                                <a href=""><i class=" fa-solid fa-bars"></i></a>
                             </div>
                         </div>
                     </div>
@@ -43,11 +43,11 @@
                     </div>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                        <input type="text" class="form-control" v-model=searchTerms placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
                       </div>
                     <div class="contact-list overflow-auto" role="button">
                         <div class="row g-0 ">
-                            <div @click="setCurrentindex(i)" v-for="(contact,i) in contacts" class="d-flex contact">
+                            <div @click="setCurrentindex(i)" v-for="(contact,i) in filteredList" class="d-flex contact">
                                 <div class="col-2 d-flex align-items-center  justify-content-center">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" class="img-fluid p-2" alt="">
                                 </div>
@@ -73,10 +73,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div  class="col-6 d-flex align-items-center justify-content-end gap-2 ">
-                            <a href="" class><i class="fa-solid fa-message"></i></a>
-                            <a href=""><i class="fa-solid fa-message"></i></a>
-                            <a href=""><i class="fa-solid fa-message"></i></a>
+                        <div  class="col-6 d-flex align-items-center justify-content-end gap-2 fa-xl">
+                            <a href="" class><i class=" fa-solid fa-magnifying-glass"></i></i></a>
+                            <a href=""><i class=" fa-solid fa-paperclip"></i></a>
+                            <a href=""><i class=" fa-solid fa-bars"></i></a>
                             
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                     <div class="chatBox overflow-auto ">
                         <ul class="d-flex flex-column justify-content-end m-4 p-1 align-items-end" v-for="message in contacts[currentIndex].messages">
                             <li :class="`${message.status} rounded-3`">
-                                {{message.text}}
+                                {{message.text}} <span class="date d-block text-right " >{{message.date}}</span>
                             </li>
                         </ul>
                     </div>
@@ -93,13 +93,13 @@
                 <footer>
                     <div class="row header template g-0 align-items-center justify-content-center">
                     <div class="col-1 justify-content-center d-flex">
-                        <i class="fa-regular fa-face-smile" role="button"></i>
+                        <i class="fa-regular fa-face-smile fa-xl" role="button"></i>
                     </div>
                     <div class="col-10 w-10">
-                        <div class="w-100" > <input class="w-100 h-100" type="text" v-model.trim="newMessage" @keyup.enter="addNewMessage()" placeholder="Scrivi un messaggio"></div>
+                        <div class="w-100" > <input class="w-100 rounded-2 border border-light h-100" type="text" v-model.trim="newMessage" @keyup.enter="addNewMessage()" placeholder="Scrivi un messaggio"></div>
                     </div>
                     <div class="col-1 d-flex justify-content-center">
-                        <i class="fa-solid fa-microphone" role="button"></i>
+                        <i class="fa-solid fa-microphone fa-xl" role="button"></i>
                     </div>
                     </div>
                 </footer>

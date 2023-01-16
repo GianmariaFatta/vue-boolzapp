@@ -1,9 +1,8 @@
 
-
 body{
 
     height: 100vh;
-    background-image: linear-gradient(180deg, #009688 10%, #DBDBD3 10%);
+    background-image: linear-gradient(180deg, #009688 15%, #DBDBD3 15%);
 }
 
 .template{
@@ -17,7 +16,6 @@ body{
 .chatBox{
     width: 100%;
     height: 580px;
-    background-color: red;
     background-image: url(../img/mine.jpg);
     background-size: cover;
 }
@@ -48,19 +46,21 @@ ul{
 }
 
 .sent{
-    padding: 5px;
-    text-align: right;
-    min-height: 50px;
-    background-color: #D5F9BA;
-    margin-bottom: 20px;
-    align-self:flex-end;
 
-  
+    padding: 15px;
+    max-width: 400px;
+    min-height: 60px;
+    background-color: #D5F9BA;
+    margin: 20px 20px;
+    align-self:flex-end;
+    
+    
+    
     
 }
 .received{ 
-    padding: 5px;
-    text-align: left;
+    padding: 15px;
+    max-width: 400px;
     min-height: 50px;
     background-color: #fff;
     margin-bottom: 20px;
@@ -71,4 +71,19 @@ ul{
 
 .contact:hover{
     background-color: #dedede;
+}
+
+i{
+    color:#b1aaaa
+}
+
+i:hover{
+    color:dodgerblue
+}
+
+.date{
+    font-size: 13px;
+    text-align: end;
+    color: #626060;
+    
 }

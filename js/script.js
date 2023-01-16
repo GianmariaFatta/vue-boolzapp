@@ -4,6 +4,7 @@ const app = Vue.createApp({
     data(){
         return{
             currentIndex:0,
+            searchTerms:"",
             contacts: [
                 {
                     name: 'Michele',
@@ -83,6 +84,7 @@ const app = Vue.createApp({
                       status: 'received'
                     }
                   ],
+                  
                 },
             ],
             newMessage:'',
@@ -108,6 +110,14 @@ const app = Vue.createApp({
             setTimeout(() => this.contacts[this.currentIndex].messages.push(this.newMessageIn), 1000)
             
     }
+    }
+},
+computed: {
+    filteredList(){
+        return this.contacts.filter((contact)=>{
+            return contact.name.toLowerCase().includes(this.searchTerms.toLowerCase())
+        })
+
     }
 }
 })
