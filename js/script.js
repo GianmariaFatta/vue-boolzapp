@@ -3,10 +3,12 @@ const dt=luxon.DateTime;
 const app = Vue.createApp({
     data(){
         return{
+            id:0,
             currentIndex:0,
             searchTerms:"",
             contacts: [
                 {
+                    id:0,
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
@@ -28,6 +30,7 @@ const app = Vue.createApp({
             ],
         },
                 {
+                    id:1,
                     name: 'Fabio',
                     avatar: '_2',
                   visible: true,
@@ -49,6 +52,7 @@ const app = Vue.createApp({
                 ],
                 },
                 {
+                    id:2,
                   name: 'Samuele',
                   avatar: '_3',
                   visible: true,
@@ -70,6 +74,7 @@ const app = Vue.createApp({
                 ],
                 },
                 {
+                    id:3,
                   name: 'Luisa',
                   avatar: '_4',
                   visible: true,
@@ -114,6 +119,7 @@ const app = Vue.createApp({
     getCurrentMoment(){
         return dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT);
     },
+
 },
 computed: {
     filteredList(){

@@ -82,9 +82,11 @@ i:hover{
 }
 
 .date{
-    font-size: 13px;
+    margin-top: 3px;
+    font-size: 12px;
     text-align: end;
-    color: #626060;
+    color: #000;
+    opacity:60%;
     
 }
 
